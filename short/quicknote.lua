@@ -67,3 +67,31 @@ revDays = {["Sunday"] = 1, ["Monday"] = 2,
 for k,v in ipairs(revDays) do
         print("do something")
 end
+
+-- function
+function add(a)
+        local sum = 0
+        for i,v in ipairs(a) do
+                sum = sum + v
+        end
+        return sum
+end
+
+add(2)
+
+-- variable number of argumets
+printResult = ""
+    
+function print (...)
+        for i,v in ipairs(arg) do
+                printResult = printResult .. tostring(v) .. "\t"
+        end
+        printResult = printResult .. "\n"
+end
+
+-- named argumets
+function rename (arg)
+      return os.rename(arg.old, arg.new)
+end
+
+rename{old="temp.lua", new="temp1.lua"}
